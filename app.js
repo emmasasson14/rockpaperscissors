@@ -16,17 +16,21 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-//while human choice === 'rock'.toUpperCase() || 'paper'.toUpperCase() || 'scissors.toUpperCase()
-
 function playRound(humanChoice, computerChoice) {
-    while (humanChoice.toUpperCase() === 'ROCK' || humanChoice.toUpperCase() === 'PAPER' || humanChoice.toUpperCase() === 'SCISSORS') {
-        if (humanChoice.toUpperCase() === 'ROCK' && computerChoice.toUpperCase() === 'PAPER') {
-            computerScore++;
-            console.log('Computer Wins!')
-        } else if (humanChoice.toUpperCase() === 'ROCK' && computerChoice.toUpperCase() === 'SCISSORS') {
-            humanScore++;
-            console.log('You beat the computer!')
-        } else if ()
-    }
+    if (toLowerCase(humanChoice) === computerChoice) {
+        playRound()
+    } else if (toLowerCase(humanChoice) === 'rock' && computerChoice === 'scissors') {
+        console.log('you win!');
+        humanScore++;
+    } else if (toLowerCase(humanChoice) === 'scissors' && computerChoice === 'paper') {
+        console.log('you win!')
+        humanScore++;
 
+    } else if (toLowerCase(humanChoice) === 'paper' && computerChoice === 'rock') {
+        console.log('you win!');
+        humanScore++;
+    } else {
+        console.log('computer wins!')
+        computerScore++;
+    }
 }
